@@ -1,0 +1,45 @@
+CSC484 Module 2 - State of the Union Text Analyzer
+Pseudocode
+
+START PROGRAM
+    Create the graphical user interface
+    Allow the user to choose a local text file
+    Also provide an option to obtain the official 2014 State of the Union
+
+    IF user requests the official 2014 speech THEN
+        Download the official GovInfo document
+        Extract the speech from the publication page
+        Remove publication notes, audience responses, and stage directions
+        Save the complete speech as a local text file
+    END IF
+
+    WHEN user analyzes a speech file
+        Validate that the file exists and is a text file
+        Read the text file using safe encoding fallbacks
+        IF file cannot be read OR contains no text THEN
+            Display a useful error message
+            STOP the current analysis
+        END IF
+
+        Extract and normalize words
+        Count total words
+        Count all characters in the original local text
+        Estimate sentence count
+        Calculate average word length
+        Calculate average sentence length
+        Count each word and calculate its percentage of all words
+        Sort unique words by length and select the ten longest
+
+        Calculate additional bounded analysis
+            Count unique words
+            Calculate lexical diversity
+            Separate common connective words for reference
+            Identify likely repeated action words using transparent rules
+            Identify recurring named and subject terms using transparent rules
+        END additional analysis
+
+        Display required results in the Summary, Word Frequency, and Longest Words tabs
+        Display optional meaningful-repetition results in a separate tab
+        Clearly state that rule-based repetition analysis is not definitive contextual analysis
+    END WHEN
+END PROGRAM
